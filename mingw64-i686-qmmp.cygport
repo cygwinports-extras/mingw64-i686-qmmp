@@ -1,0 +1,26 @@
+CROSS_HOST="i686-w64-mingw32"
+inherit cross qt4-cmake
+
+NAME="mingw64-i686-qmmp"
+VERSION=0.7.4
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="Qt4 audio player with XMMS-compatible skinnable interface"
+DESCRIPTION="The Qt Multimedia Player is a audio player with a user interface
+similar to WinAmp or XMMS."
+HOMEPAGE="http://qmmp.ylsoftware.com/"
+SRC_URI="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
+SRC_DIR="qmmp-${VERSION}"
+PATCH_URI="
+	0.7.4-mingw-plugindir.patch
+"
+
+CYGCMAKE_ARGS="
+	-DUSE_ALSA=OFF
+	-DUSE_JACK=OFF
+	-DUSE_HAL=OFF
+	-DUSE_OSS=OFF
+	-DUSE_OSS4=OFF
+	-DUSE_PULSE=OFF
+	-DUSE_LADSPA=OFF
+"
