@@ -12,10 +12,12 @@ HOMEPAGE="http://qmmp.ylsoftware.com/"
 SRC_URI="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
 SRC_DIR="qmmp-${VERSION}"
 PATCH_URI="
-	0.7.4-mingw-plugindir.patch
+	0.7.4-mingw-icon.patch
+	0.7.4-mingw-plugins.patch
 "
 
 CYGCMAKE_ARGS="
+	-DQT_LRELEASE_EXECUTABLE=${QT4_LRELEASE}
 	-DUSE_ALSA=OFF
 	-DUSE_JACK=OFF
 	-DUSE_HAL=OFF
@@ -23,4 +25,6 @@ CYGCMAKE_ARGS="
 	-DUSE_OSS4=OFF
 	-DUSE_PULSE=OFF
 	-DUSE_LADSPA=OFF
+	-DUSE_UDISKS=OFF
+	-DUSE_UDISKS2=OFF
 "
