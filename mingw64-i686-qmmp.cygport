@@ -2,7 +2,7 @@ CROSS_HOST="i686-w64-mingw32"
 inherit cross qt4-cmake
 
 NAME="mingw64-i686-qmmp"
-VERSION=0.7.4
+VERSION=0.7.5
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Qt4 audio player with XMMS-compatible skinnable interface"
